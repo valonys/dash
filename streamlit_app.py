@@ -59,10 +59,8 @@ def create_monthly_performance_chart(monthly_data, title="Monthly Performance Ov
     fig.update_layout(
         title=dict(text=title, font=dict(family='Tw Cen MT', size=18), x=0.05, y=0.95),
         barmode='stack',
-        yaxis=dict(title='Work Orders', range=[0, None], gridcolor=None,
-                  titlefont=dict(size=16, family="Tw Cen MT", color="black")),
-        yaxis2=dict(title='Progress %', overlaying='y', side='right', range=[0, 100], gridcolor=None,
-                   titlefont=dict(size=16, family="Tw Cen MT", color="black")),
+        yaxis=dict(title='Work Orders', range=[0, None], gridcolor=None, titlefont=dict(size=16, family="Tw Cen MT", color="black")),
+        yaxis2=dict(title='Progress %', overlaying='y', side='right', range=[0, 100], gridcolor=None, titlefont=dict(size=16, family="Tw Cen MT", color="black")),
         height=400,
         legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="center", x=0.5),
         plot_bgcolor='white'
