@@ -1,0 +1,8 @@
+streamlit
+pandas
+plotly
+openpyxl
+nest-asyncio
+numpy
+python-dotenvdash_env
+matplotlib
