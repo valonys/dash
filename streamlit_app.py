@@ -57,14 +57,24 @@ def create_monthly_performance_chart(monthly_data, title="Monthly Performance Ov
         textfont=dict(size=10, family="Tw Cen MT", color="black")
     ))
     fig.update_layout(
-        title=dict(text=title, font=dict(family='Tw Cen MT', size=18), x=0.05, y=0.95),
-        barmode='stack',
-        yaxis=dict(title='Work Orders', range=[0, None], gridcolor=None, titlefont=dict(size=16, family="Tw Cen MT", color="black")),
-        yaxis2=dict(title='Progress %', overlaying='y', side='right', range=[0, 100], gridcolor=None, titlefont=dict(size=16, family="Tw Cen MT", color="black")),
-        height=400,
-        legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="center", x=0.5),
-        plot_bgcolor='white'
-    )
+    title=dict(text=title, font=dict(family='Tw Cen MT', size=18), x=0.05, y=0.95),
+    barmode='stack',
+    yaxis=dict(
+        title=dict(text='Work Orders', font=dict(size=16, family="Tw Cen MT", color="black")),
+        range=[0, None],
+        gridcolor=None
+    ),
+    yaxis2=dict(
+        title=dict(text='Progress %', font=dict(size=16, family="Tw Cen MT", color="black")),
+        overlaying='y',
+        side='right',
+        range=[0, 100],
+        gridcolor=None
+    ),
+    height=400,
+    legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="center", x=0.5),
+    plot_bgcolor='white'
+)
     return fig
 
 def create_completion_bar_chart(df, processor):
@@ -106,15 +116,19 @@ def create_completion_bar_chart(df, processor):
         width=0.7
     ))
     fig.update_layout(
-        title=dict(text="Completed Jobs by Item Class", font=dict(family='Tw Cen MT', size=18), x=0.05, y=0.95),
-        yaxis=dict(title='(EXDO+QCAP) - Orders', titlefont=dict(size=14, family="Tw Cen MT", color="black")),
-        xaxis=dict(title='Item Class', titlefont=dict(size=14, family="Tw Cen MT", color="black")),
-        bargap=0.2, 
-        height=600,
-        legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="center", x=0.5),
-        plot_bgcolor='white',
-        font=dict(family="Tw Cen MT", size=12, color="black")
-    )
+    title=dict(text="Completed Jobs by Item Class", font=dict(family='Tw Cen MT', size=18), x=0.05, y=0.95),
+    yaxis=dict(
+        title=dict(text='(EXDO+QCAP) - Orders', font=dict(size=14, family="Tw Cen MT", color="black"))
+    ),
+    xaxis=dict(
+        title=dict(text='Item Class', font=dict(size=14, family="Tw Cen MT", color="black"))
+    ),
+    bargap=0.2,
+    height=600,
+    legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="center", x=0.5),
+    plot_bgcolor='white',
+    font=dict(family="Tw Cen MT", size=12, color="black")
+)
     return fig
 
 def create_backlog_item_class_chart(df_backlog):
@@ -144,14 +158,18 @@ def create_backlog_item_class_chart(df_backlog):
         width=0.7,
     ))
     fig.update_layout(
-        title=dict(text="Backlog by Item Class", font=dict(family='Tw Cen MT', size=18), x=0.05, y=0.95),
-        xaxis=dict(title='Number of Items', titlefont=dict(size=16, family="Tw Cen MT", color="black")),
-        yaxis=dict(title='Item Class', titlefont=dict(size=16, family="Tw Cen MT", color="black")),
-        bargap=0.1,
-        height=600,
-        plot_bgcolor='white',
-        font=dict(family="Tw Cen MT", size=12)
-    )
+    title=dict(text="Backlog by Item Class", font=dict(family='Tw Cen MT', size=18), x=0.05, y=0.95),
+    xaxis=dict(
+        title=dict(text='Number of Items', font=dict(size=16, family="Tw Cen MT", color="black"))
+    ),
+    yaxis=dict(
+        title=dict(text='Item Class', font=dict(size=16, family="Tw Cen MT", color="black"))
+    ),
+    bargap=0.1,
+    height=600,
+    plot_bgcolor='white',
+    font=dict(family="Tw Cen MT", size=12)
+)
     return fig
 
 def main():
