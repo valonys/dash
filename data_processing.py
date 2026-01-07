@@ -22,7 +22,7 @@ class DataProcessor:
            'GIR': {'nrows': 572},
            'DAL': {'nrows': 761},
            'PAZ': {'nrows': 846}, 
-           'CLV': {'nrows': 835}
+           'CLV': {'nrows': 735}
        }
 
        # Add this before the main df = pd.read_excel()
@@ -146,7 +146,7 @@ class DataProcessor:
         }
 
    def _analyze_sce_performance(self, df):
-        sce_df = df[df['SECE STATUS'] == 'SCE']
+        sce_df = df[df['SECE STATUS'] == 'SECE']
         return self._analyze_performance(sce_df)
 
    def _analyze_item_class_progress(self, df):
@@ -156,7 +156,7 @@ class DataProcessor:
        delay_order = list(self.delay_colors.keys())
        
        # Define SECE STATUS order
-       sece_order = ['SCE', 'Non-SCE']
+       sece_order = ['SECE', 'Non-SCE']
        
        # Create pivot table
        pivot_table = pd.pivot_table(
@@ -238,4 +238,5 @@ class DataProcessor:
     # Fill NaN with 0
     performance_data = performance_data.fillna(0).astype(int)
     
+
     return performance_data
