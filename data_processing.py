@@ -21,7 +21,7 @@ class DataProcessor:
        site_config = {
            'GIR': {'nrows': 583},
            'DAL': {'nrows': 761},
-           'PAZ': {'nrows': 846}, 
+           'PAZ': {'nrows': 861}, 
            'CLV': {'nrows': 735}
        }
 
@@ -240,6 +240,7 @@ class DataProcessor:
     
 
     return performance_data
+
 
 
 
