@@ -47,7 +47,7 @@ class DataProcessor:
        df = df.dropna(how='all')
        df['Backlog?'] = df['Backlog?'].fillna('No')
        df['SECE STATUS'] = df['SECE STATUS'].fillna('Non-SCE').astype(str).apply(
-           lambda x: 'SCE' if x.upper() == 'SCE' else 'Non-SCE'
+           lambda x: 'SCE' if x.upper() == 'SECE' else 'Non-SCE'
        )
        df['Year'] = df['Year'].fillna(datetime.now().year)
        df['Job Done'] = df['Job Done'].fillna('Not Compl')
@@ -87,7 +87,7 @@ class DataProcessor:
        backlog_items = df[df['Backlog?'] == 'Yes']
        total_backlog = len(backlog_items)
        
-       sece_backlog = len(backlog_items[backlog_items['SECE STATUS'] == 'SCE'])
+       sece_backlog = len(backlog_items[backlog_items['SECE STATUS'] == 'SECE'])
        sece_percentage = (sece_backlog / total_backlog * 100) if total_backlog > 0 else 0
        
        return {
@@ -176,7 +176,7 @@ class DataProcessor:
        pivot_table = pivot_table.reindex(columns=ordered_columns)
        
        total_backlog = len(backlog_items)
-       sece_backlog = len(backlog_items[backlog_items['SECE STATUS'] == 'SCE'])
+       sece_backlog = len(backlog_items[backlog_items['SECE STATUS'] == 'SECE'])
        equipment_classes = len(pivot_table.index)
        
        return {
@@ -240,6 +240,7 @@ class DataProcessor:
     
 
     return performance_data
+
 
 
 
