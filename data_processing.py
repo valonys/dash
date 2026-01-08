@@ -19,7 +19,7 @@ class DataProcessor:
        
    def load_inspection_data(self, uploaded_file, selected_site='GIR'):
        site_config = {
-           'GIR': {'nrows': 572},
+           'GIR': {'nrows': 587},
            'DAL': {'nrows': 761},
            'PAZ': {'nrows': 846}, 
            'CLV': {'nrows': 735}
@@ -240,3 +240,4 @@ class DataProcessor:
     
 
     return performance_data
+
